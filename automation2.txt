@@ -1,0 +1,105 @@
+<html>
+<head>
+
+<style>
+body{
+    background-image: url("homeautomation.jpg"); 
+    background-size: 1000px 590px;
+    align: center
+    }
+.d  {
+    text-align: center;
+font-size: 40px;
+color: black;
+letter-spacing: 3px;
+font-style: italic;
+ font-weight: bold;
+    }
+.led{
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    border: SOLID;
+    padding: 15px 32px;
+    button-align: center;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 4px 2px;
+    width:200px;
+    
+    }
+.led:hover{
+    background-color: GREY;
+    }
+.led:active{
+    background-color: blue;
+    }
+
+		<title>ESP8266 LED Control</title>
+</style>
+	</head>
+	<body background-color: lightblue;>
+
+	
+	<!-- in the <button> tags below the ID attribute is the value sent to the arduino -->
+	<h1 class="d" ><a Ahref="https://maker.ifttt.com/trigger/button_pressed/with/key/OzYi-W4aLEfaFMp2XD2Fj">SMART HOME</a></h1>
+	
+<p class="d"><button id="11" class="led" onClick="myFunction1()">LIGHT</button> </p> <!-- button for pin 11 -->
+	
+<p class="d"><button id="12" class="led" onClick="myFunction2()">T.V.</button></p> <!-- button for pin 12 -->
+	
+<p class="d"><button id="13" class="led" onClick="myFunction3()">FAN</button></p> <!-- button for pin 13 -->
+	
+<p class="d"><button id="8" class="led" onClick="myFunction4()">AC</button> </p><!-- button for pin 13 -->
+	
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$(".led").click(function(){
+
+var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+// send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+$.get("http://192.168.4.1:80/", {pin:p}); // execute get request
+});
+});
+</script>
+<script>
+function myFunction1() {
+var x = document.getElementById("11");
+if (x.innerHTML === "LIGHT ON") {
+x.innerHTML = "LIGHT OFF";
+} else {
+x.innerHTML = "LIGHT ON";
+}
+}
+function myFunction2() {
+var x = document.getElementById("12");
+if (x.innerHTML === "T.V. ON") {
+x.innerHTML = "T.V. OFF";
+} else {
+x.innerHTML = "T.V. ON";
+}
+}
+function myFunction3() {
+var x = document.getElementById("13");
+if (x.innerHTML === "FAN ON") {
+x.innerHTML = "FAN OFF";
+} else {
+x.innerHTML = "FAN ON";
+}
+}
+function myFunction4() {
+var x = document.getElementById("8");
+if (x.innerHTML === "AC ON") {
+x.innerHTML = "AC OFF";
+} else {
+x.innerHTML = "AC ON";
+}
+}
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+body
+{
+background-image: url("homeautomation.jpg"); 
+background-size: 900px 590px;
+align: center;
+}
+.d
+{
+text-align: center;
+font-size: 40px;
+color: black;
+letter-spacing: 3px;
+font-style: italic;
+font-weight: bold;
+}
+.led
+{
+background-color: black;
+color: white;
+border-radius: 50px;
+border: SOLID;
+padding: 15px 32px;
+text-align: center;
+font-size: 20px;
+margin: 4px 2px;
+width:200px;
+}
+<title>ESP8266 LED Control</title>
+</style>
+</head>
+<body>
+
+<h1 class="d" ><a Ahref="https://maker.ifttt.com/trigger/ESP/with/key/OzYi-W4aLEfaFMp2XD2Fj">SMART HOME</a></h1>
+<p class="d">LIGHT<button id="11" class="led" onClick="myFunction()">OFF</button> </p> <!-- button for pin 11 -->
+	
+<p class="d"> T.V. <button id="12" class="led" onClick="myFunction()">OFF</button></p> <!-- button for pin 12 -->
+	
+<p class="d">FAN<button id="13" class="led" onClick="myFunction()">OFF</button></p> <!-- button for pin 13 -->
+	 
+<p class="d">A.C.<button id="8" class="led" onClick="myFunction()">OFF</button> </p><!-- button for pin 13 -->
+	
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(".led").click(function(){
+var p = $(this).attr('id'); // get id value (i.e. pin13, pin12, or pin11)
+// send HTTP GET request to the IP address with the parameter "pin" and value "p", then execute the function
+$.get("http://192.168.1.1:80/", {pin:p}); // execute get request
+$(this).text($(this).text() == 'ON' ? 'OFF' : 'ON');//swap the button
+});
+});
+
+</script>
+</body>
+</html>
+
+
