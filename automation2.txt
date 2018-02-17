@@ -51,7 +51,7 @@ font-style: italic;
 	
 <p class="d"><button id="13" class="led" onClick="myFunction3()">FAN</button></p> <!-- button for pin 13 -->
 	
-<p class="d"><button id="8" class="led" onClick="myFunction4()">AC</button> </p><!-- button for pin 13 -->
+<p class="d"><button id="08" class="led" onClick="myFunction4()">AC</button> </p><!-- button for pin 13 -->
 	
 <script src="jquery.min.js"></script>
 <script type="text/javascript">

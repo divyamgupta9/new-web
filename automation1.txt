@@ -40,7 +40,7 @@ width:200px;
 	
 <p class="d">FAN<button id="13" class="led" onClick="myFunction()">OFF</button></p> <!-- button for pin 13 -->
 	 
-<p class="d">A.C.<button id="8" class="led" onClick="myFunction()">OFF</button> </p><!-- button for pin 13 -->
+<p class="d">A.C.<button id="08" class="led" onClick="myFunction()">OFF</button> </p><!-- button for pin 13 -->
 	
 <script src="jquery.min.js"></script>
 <script type="text/javascript">
